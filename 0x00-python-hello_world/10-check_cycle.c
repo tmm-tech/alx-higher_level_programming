@@ -6,7 +6,7 @@
  *
  * Return: 1 if the list has a cycle, 0 if it doesn't
  */
-int checkcycle(listint_t *list)
+int check_cycle(listint_t  *list)
 {
     listint_t *slow = list;
     listint_t *fast = list;
