@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 12-fizzbuzz.py
+# 12-fizzbuzz.main_0.py
 # Tony Mwangi Mugi <tonymugi074@gmail.com>
 
 
