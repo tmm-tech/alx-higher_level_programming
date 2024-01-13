@@ -1,30 +1,35 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * main - check the code
+ * get_dnodeint_at_index - function that gets nth node of a list at index
+ * @head: pointer to head of list.
+ * @index: position of node starting from 0.
  *
- * Return: Always EXIT_SUCCESS.
+ * If the node does not exist, return NULL.
+ *
+ * Return: the nth node of a dlistint_t linked list.
  */
-int main(void)
-{
-    dlistint_t *head;
-    int sum;
 
-    head = NULL;
-    add_dnodeint_end(&head, 0);
-    add_dnodeint_end(&head, 1);
-    add_dnodeint_end(&head, 2);
-    add_dnodeint_end(&head, 3);
-    add_dnodeint_end(&head, 4);
-    add_dnodeint_end(&head, 98);
-    add_dnodeint_end(&head, 402);
-    add_dnodeint_end(&head, 1024);
-    sum = sum_dlistint(head);
-    printf("sum = %d\n", sum);
-    free_dlistint(head);
-    head = NULL;
-    return (EXIT_SUCCESS);
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+	unsigned int i;
+
+	i = 0;
+
+	/* check if head is NULL */
+	if (!head)
+		return (NULL);
+
+	/* while head is not NULL */
+	while (head != NULL)
+	{
+		/* initialize search here */
+		if (i == index)
+			break;
+		i++;
+		/* make head point to next if index is not found */
+		head = head->next;
+	}
+	/* return the node */
+	return (head);
 }
